@@ -1,19 +1,18 @@
 import torch
 import torch.nn as nn
 from PIL import Image
-from tqdm.auto import tqdm
-from transformers import CLIPTextModel, CLIPTokenizer
-
 from diffusers import UNet2DConditionModel, AutoencoderKL, PNDMScheduler
 from diffusers.image_processor import VaeImageProcessor
+from tqdm.auto import tqdm
+from transformers import CLIPTextModel, CLIPTokenizer
 
 
 class EasyStableDiffusionPipeline(nn.Module):
     def __init__(
-        self,
-        model_id: str = "CompVis/stable-diffusion-v1-4",
-        device: str | torch.device = "cuda",
-        torch_dtype: torch.dtype = torch.float16,
+            self,
+            model_id: str = "CompVis/stable-diffusion-v1-4",
+            device: str | torch.device = "cuda",
+            torch_dtype: torch.dtype = torch.float16,
     ):
         super().__init__()
 
@@ -44,14 +43,14 @@ class EasyStableDiffusionPipeline(nn.Module):
         )
 
     def __call__(
-        self,
-        prompt: str,
-        height: int = 512,
-        width: int = 512,
-        num_inference_steps: int = 50,
-        guidance_scale: float = 7.5,
-        negative_prompt: str | None = None,
-        seed: int = 1117,
+            self,
+            prompt: str,
+            height: int = 512,
+            width: int = 512,
+            num_inference_steps: int = 50,
+            guidance_scale: float = 7.5,
+            negative_prompt: str | None = None,
+            seed: int = 1117,
     ) -> Image.Image:
         text_inputs = self.tokenizer(
             prompt,
@@ -118,8 +117,8 @@ class EasyStableDiffusionPipeline(nn.Module):
             # Unconditional and conditional noise predictions
             noise_pred_uncond, noise_pred_cond = noise_pred.chunk(2)
             noise_pred = (
-                guidance_scale * noise_pred_cond
-                + (1 - guidance_scale) * noise_pred_uncond
+                    guidance_scale * noise_pred_cond
+                    + (1 - guidance_scale) * noise_pred_uncond
             )
 
             # Update latents x_t -> x_t-1
