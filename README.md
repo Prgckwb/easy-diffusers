@@ -11,8 +11,8 @@ Here's a table that shows the difference in code size:
 
 | Class Name                    | File Path                                                                 | Lines |
 |------------------------------|--------------------------------------------------------------------------|-------|
-| StableDiffusionPipeline      | `diffusers/pipelines/stable_diffusion/pipeline_stable_diffusion.py`      | 1062  |
-| EasyStableDiffusionPipeline  | `easy_diffusers/stable_diffusion/txt2img_stable_diffusion.py`            | 133   |
+| StableDiffusionPipeline      | `pipeline_stable_diffusion.py`      | 1062  |
+| EasyStableDiffusionPipeline  | `txt2img_stable_diffusion.py`            | 133   |
 
 ## How to Use
 ### 1. Learn the Basics of the Diffusers Pipeline
