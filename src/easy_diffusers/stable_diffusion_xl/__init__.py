@@ -1,0 +1,1 @@
+from .img2img_stable_diffusion_xl import EasyStableDiffusionXLImg2ImgPipeline

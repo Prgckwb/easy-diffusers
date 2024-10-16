@@ -1,0 +1,1 @@
+from .txt2img_stable_diffusion import EasyStableDiffusionPipeline

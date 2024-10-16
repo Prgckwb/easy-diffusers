@@ -1,1 +1,2 @@
-from .txt2img_stable_diffusion import SimpleStableDiffusionPipeline
+from .stable_diffusion import EasyStableDiffusionPipeline
+from .stable_diffusion_xl import EasyStableDiffusionXLImg2ImgPipeline
